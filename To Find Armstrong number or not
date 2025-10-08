@@ -1,0 +1,22 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      Scanner sc =new Scanner(System.in); 
+      int n = sc.nextInt();
+      int ans = n;
+      int cnt=0;
+      int sum =0;
+      while(ans >0){
+        ans = ans/10;
+        cnt++;
+      }
+      ans = n;
+      while(ans>0){
+        int f = ans%10;
+        sum = sum + (int)Math.pow(f, cnt);
+        ans = ans/10;
+      }
+      System.out.println((sum==n) ? "Armstrong Number" : "Not An Armstrong Number");
+    }
+}
